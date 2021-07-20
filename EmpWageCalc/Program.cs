@@ -9,20 +9,15 @@ namespace EmpWageCalc
             Console.WriteLine(" Welcome to Employee Wage Computation Program ");
             ComputeWork cw = new ComputeWork();
 
-            /* #UC1 : Checking employee attendance
-            Console.WriteLine(" [ Checking employee attendance ] "); 
+            //UC4 : Solving using Switch Case Statement
+
+            Console.WriteLine("\n [ Checking employee attendance ] "); 
             Random random = new Random();
-            int empPresent = random.Next(0, 2);     // generates 0 and 1
-            cw.EmpAttCheck(empPresent);
-            
+            int empPresent = random.Next(0, 3);     // generates 0 and 1
 
-            //#UC2 : Calculate Daily Employee Wage
-            Console.WriteLine(" [ Calculating Daily Employee Wage ] ");
-            cw.CalcDailywage();
-            */ 
+            cw.CalcDailywage(empPresent);
 
-            //UC3 : Add Part time Employee Wage calcuation
-            cw.CalcDailywage();
+
         }
     }
 }

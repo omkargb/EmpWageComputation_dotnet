@@ -6,30 +6,41 @@ namespace EmpWageCalc
 {
     public class ComputeWork
     {
-        /* public void EmpAttCheck(int empPresent)
+        public void EmpAttCheck(int empPresent)
         { 
             if (empPresent == 1)
             {
-                Console.WriteLine(" Employee is present.");
             }
             else
             {
                 Console.WriteLine(" Employee is absent.");
             }
         }
-        */
 
-        public void CalcDailywage()
+        public void CalcDailywage(int empPresent)
         {
-            //int FullTime_WorkHrs = 8;
-            int PartTime_WorkHrs = 4;
             int wagePerHr = 20;
+            int WorkHrs=0;
 
-            int daily_PTWage = PartTime_WorkHrs * wagePerHr;
-            //int daily_FTWage = PartTime_WorkHrs * wagePerHr;
+            switch (empPresent) 
+            {
+                case 1:
+                    Console.WriteLine(" Employee is present Part Time.");
+                    WorkHrs = 4;
+                    break;
+                case 2:
+                    Console.WriteLine(" Employee is present Full Time.");
+                    WorkHrs = 8;
+                    break;
+                default:    //empPresent is 0
+                    Console.WriteLine(" Employee is Absent.");
+                    break;
+            }
 
-            Console.WriteLine(" Daily wage for part time work : " + daily_PTWage);
-            //Console.WriteLine(" Daily wage for Full time work : " +daily_FTWage); 
+            Console.WriteLine("\n [ Calculating Employee Wage ] ");
+
+            int dailyWage = WorkHrs * wagePerHr;
+            Console.WriteLine(" Employee Wage : " +dailyWage);
         }
 
     }
