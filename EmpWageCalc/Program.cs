@@ -11,11 +11,7 @@ namespace EmpWageCalc
 
             //UC4 : Solving using Switch Case Statement
 
-            Console.WriteLine("\n [ Checking employee attendance ] "); 
-            Random random = new Random();
-            int empPresent = random.Next(0, 3);     // generates 0 and 1
-
-            cw.CalcDailywage(empPresent);
+            cw.CalcDailywage();
 
 
         }
