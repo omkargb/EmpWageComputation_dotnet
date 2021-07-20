@@ -10,11 +10,10 @@ namespace EmpWageCalc
         {
             Console.WriteLine("\n [ Checking employee attendance and displaying wage per day ] \n");
             Random random = new Random();
-            int dailyWage=0;
+            int dailyWage = 0;
             int monthWage = 0;
             int wagePerHr = 20;
             int WorkHrs;
-            int numOfDays = 20;
 
             int maxWorkingDays = 20;
             int maxWorkingHrs = 100;
