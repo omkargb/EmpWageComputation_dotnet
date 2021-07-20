@@ -14,12 +14,15 @@ namespace EmpWageCalc
             Random random = new Random();
             int empPresent = random.Next(0, 2);     // generates 0 and 1
             cw.EmpAttCheck(empPresent);
-            */
+            
 
             //#UC2 : Calculate Daily Employee Wage
             Console.WriteLine(" [ Calculating Daily Employee Wage ] ");
             cw.CalcDailywage();
+            */ 
 
+            //UC3 : Add Part time Employee Wage calcuation
+            cw.CalcDailywage();
         }
     }
 }

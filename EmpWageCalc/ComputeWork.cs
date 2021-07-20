@@ -21,10 +21,16 @@ namespace EmpWageCalc
 
         public void CalcDailywage()
         {
-            int workHrs = 8;
+            //int FullTime_WorkHrs = 8;
+            int PartTime_WorkHrs = 4;
             int wagePerHr = 20;
-            int dailyWage = workHrs * wagePerHr;
-            Console.WriteLine(" Daily wage : "+dailyWage); 
+
+            int daily_PTWage = PartTime_WorkHrs * wagePerHr;
+            //int daily_FTWage = PartTime_WorkHrs * wagePerHr;
+
+            Console.WriteLine(" Daily wage for part time work : " + daily_PTWage);
+            //Console.WriteLine(" Daily wage for Full time work : " +daily_FTWage); 
         }
+
     }
 }
