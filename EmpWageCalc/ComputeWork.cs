@@ -8,7 +8,7 @@ namespace EmpWageCalc
     {
         public void CalcDailywage()
         {
-            Console.WriteLine("\n [ Checking employee attendance and displaying wage per day ] ");
+            Console.WriteLine("\n [ Checking employee attendance and displaying wage per day ] \n");
             Random random = new Random();
             int dailyWage=0;
             int monthWage = 0;
@@ -16,7 +16,12 @@ namespace EmpWageCalc
             int WorkHrs;
             int numOfDays = 20;
 
-            for (int day = 1; day <= numOfDays; day++ )
+            int maxWorkingDays = 20;
+            int maxWorkingHrs = 100;
+            int totalEmpHrs = 0;
+            int totalWorkingDays = 0;
+
+            while ( totalEmpHrs < maxWorkingHrs  && totalWorkingDays < maxWorkingDays)
             {
                 int empPresent = random.Next(0, 3);     // generates 0 to 2
                 switch (empPresent)
@@ -35,11 +40,15 @@ namespace EmpWageCalc
                         break;
                 }
                 dailyWage = WorkHrs * wagePerHr;
-                Console.Write( " " + dailyWage + " |");
                 monthWage = monthWage + dailyWage;
+                totalWorkingDays++;
+                totalEmpHrs = totalEmpHrs + WorkHrs;
+
+                Console.WriteLine(" Day: " + totalWorkingDays + "  Wage: " + dailyWage + "\tHrs: "+ totalEmpHrs);
             }
 
-            Console.WriteLine("\n\n [ Calculating Employee's monthly(20 days) Wage ] ");
+            Console.WriteLine("\n Total working Days : " + totalWorkingDays+ "\t Total working Hours : " + totalEmpHrs);
+            Console.WriteLine("\n [ Calculating Employee's monthly Wage ] ");
             Console.WriteLine(" Total Wage : " + monthWage);
         }
     }
