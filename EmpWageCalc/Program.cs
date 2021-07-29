@@ -8,9 +8,7 @@ namespace EmpWageCalc
         {
             Console.WriteLine(" Welcome to Employee Wage Computation Program ");
             ComputeWork cw = new ComputeWork();
-
-            cw.CalcDailywage();
-
+            cw.CalcWage();
         }
     }
 }
