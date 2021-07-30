@@ -6,21 +6,15 @@ namespace EmpWageCalc
 {
     public class ComputeWork
     {
-        public void CalcWage()
+        public void CalcWage(string company, int wagePerHr, int maxWorkingHrs, int maxWorkingDays)
         {
-            Console.WriteLine("\n [ Checking employee attendance and displaying wage per day ] \n");
             Random random = new Random();
             int dailyWage;
             int monthWage = 0;
-            int wagePerHr = 20;
             int WorkHrs;
-
-            const int isPartTime = 4, isFullTime = 8;
-            const int maxWorkingDays = 20;
-            const int maxWorkingHrs = 100;
-            int totalEmpHrs = 0;
-            int totalWorkingDays = 0;
-
+            const int isPartTime = 0, isFullTime = 1;
+            int totalEmpHrs = 0, totalWorkingDays = 0;
+            
             while ( totalEmpHrs < maxWorkingHrs  && totalWorkingDays < maxWorkingDays)
             {
                 int empPresent = random.Next(0, 3);     // generates 0 to 2
@@ -40,11 +34,10 @@ namespace EmpWageCalc
                 monthWage += dailyWage;
                 totalWorkingDays++;
                 totalEmpHrs += WorkHrs;
-                Console.WriteLine(" Day: " + totalWorkingDays + "  Wage: " + dailyWage + "\tHrs: "+ totalEmpHrs);
             }
-            Console.WriteLine("\n Total working Days : " + totalWorkingDays+ "\t Total working Hours : " + totalEmpHrs);
-            Console.WriteLine("\n [ Calculating Employee's monthly Wage ] ");
-            Console.WriteLine(" Total Wage : " + monthWage);
+
+            Console.WriteLine(" {0} \t {1} \t\t {2} \t\t {3} \t\t {4}", company, wagePerHr, maxWorkingHrs, maxWorkingDays, monthWage);
         }
     }
 }
+
