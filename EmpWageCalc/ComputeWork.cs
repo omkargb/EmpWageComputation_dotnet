@@ -6,13 +6,28 @@ namespace EmpWageCalc
 {
     public class ComputeWork
     {
-        public void CalcWage(string company, int wagePerHr, int maxWorkingHrs, int maxWorkingDays)
+        public const int isPartTime = 0;
+        public const int isFullTime = 1;
+
+        private string company;
+        private int wagePerHr;
+        private int totalEmpWage;
+        private int maxWorkingHrs;
+        private int maxWorkingDays;
+
+        //Use Instance Variables
+        public ComputeWork(string company, int wagePerHr, int maxWorkingHrs, int maxWorkingDays)
+        {
+            this.company = company;
+            this.wagePerHr = wagePerHr;
+            this.maxWorkingHrs = maxWorkingHrs;
+            this.maxWorkingDays = maxWorkingDays;
+        }
+        public void CalcWage()
         {
             Random random = new Random();
-            int dailyWage;
-            int monthWage = 0;
+
             int WorkHrs;
-            const int isPartTime = 0, isFullTime = 1;
             int totalEmpHrs = 0, totalWorkingDays = 0;
             
             while ( totalEmpHrs < maxWorkingHrs  && totalWorkingDays < maxWorkingDays)
@@ -30,14 +45,17 @@ namespace EmpWageCalc
                             WorkHrs = 0;
                             break;
                 }
-                dailyWage = WorkHrs * wagePerHr;
-                monthWage += dailyWage;
+                
                 totalWorkingDays++;
                 totalEmpHrs += WorkHrs;
-            }
 
-            Console.WriteLine(" {0} \t {1} \t\t {2} \t\t {3} \t\t {4}", company, wagePerHr, maxWorkingHrs, maxWorkingDays, monthWage);
+            }
+            totalEmpWage = totalEmpHrs * this.wagePerHr;
+        }
+
+        public string CompanyAndWage()
+        {
+            return " Total employee wage for : " + this.company+ " is Rs. : "+this.totalEmpWage;
         }
     }
 }
-

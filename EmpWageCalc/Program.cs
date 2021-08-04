@@ -7,11 +7,17 @@ namespace EmpWageCalc
         public static void Main(string[] args)
         {
             Console.WriteLine(" Welcome to Employee Wage Computation Program ");
-            ComputeWork cw = new ComputeWork();
-            Console.WriteLine("\n Company\tWagePerHr\tMaxWorkingHrs\tMaxWorkingDays\tTotal Wage ");
+
+            //string company, int wagePerHr, int maxWorkingHrs, int maxWorkingDays
+            ComputeWork company1 = new ComputeWork("company1", 20, 100, 25);
+            ComputeWork company2 = new ComputeWork("company2", 30, 150, 20);
+
+            company1.CalcWage();
+            company2.CalcWage();
+
+            Console.WriteLine(company1.CompanyAndWage());
+            Console.WriteLine(company2.CompanyAndWage());
             Console.WriteLine(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-            cw.CalcWage("company1", 20, 100, 25);
-            cw.CalcWage("company2", 30, 150, 20);
         }
     }
 }
